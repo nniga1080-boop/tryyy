@@ -1,0 +1,31 @@
+# Performance changes
+
+- W1a lineup: match+membership parallel
+- W1b lineup: 4 queries parallel
+- W2 my-team: 4 queries parallel
+- W3a player page: 4 queries parallel
+- W3b
+- W3c
+- W3d fetchPlayerRecords: matches+events parallel
+- W4 report editor: 3 queries parallel
+- W5 submitMatchReport: 3 queries -> 1 parallel pair (both lineups in one query)
+- C1 teams-list cache (60s) + invalidation on team/settings edits
+- C2 settings cache gets a 5-min expiry
+- I1 logo helper: big hero logo eager, rest lazy
+- I2 players-list avatars lazy + sized
+- I3 profile avatar sized
+- I4 CSS: fixed avatar/logo boxes
+- O0 helper
+- O1 "request to join" button: badge shows instantly, rolls back on error
+- O2 create-team form: "pending" card instantly, form (with typed values) restored on error
+- O3 team-page join form: same pattern
+- O4 team post: appears instantly (dimmed), removed + text restored on error
+- O5 delete post: row hides instantly
+- O6 captain accepts a request: row hides instantly (rolls back on TEAM_FULL etc.)
+- O7 captain rejects
+- O8.1 admin approve/reject row hides instantly
+- O8.2 admin approve/reject row hides instantly
+- O8.3 admin approve/reject row hides instantly
+- O8.4 admin approve/reject row hides instantly
+- O8.5 admin approve/reject row hides instantly
+- O8.6 admin approve/reject row hides instantly
